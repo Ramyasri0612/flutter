@@ -2,39 +2,37 @@
 import 'package:flutter/material.dart';
 void main()
 {
-  runApp(MyApp());
+  runApp(ResponsiveApp());
 }
-class MyApp extends StatelessWidget{
-  @override
-  Widget build(BuildContext context)
-  {
-    return MaterialApp(
-      home: ResponsiveHome(),
-    );
-  }
-}
-class ResponsiveHome extends StatelessWidget{
+class ResponsiveApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-  double screenWidth=MediaQuery.of(context).size.width;
-  double screenHeight=MediaQuery.of(context).size.height;
-  return Scaffold(
-    appBar: AppBar(
-      title: Text('MediaQuery Responsive UI'),
-    ),
-    body:Center(child: Container(width: screenWidth *0.8,height: screenWidth *0.4,color: Colors.blue,
-    child: Center(
-    child:Text(
-      screenWidth > 600? 'Large Screen Layout':'Small Screen Layout',
-      style: TextStyle(
-        color: Colors.white,
-        fontSize: screenWidth > 600  ? 24:16,
+    return MaterialApp(
+      title: 'Responsive ui',
+      theme:ThemeData(
+        primarySwatch:Colors.blue,
       ),
-    ),
-    ),
-    ),
-    ),
+      home:ResponsiveHomePage(),
     );
   }
 }
+Class ResponsiveHomePage ectends StatelessWidget{
+  @override
+  Widget build(buildContext context){
+    return Scaffold(
+      cupp Bar:app(Bar(
+        title:Text('Responsive ui design'),
+      ),
+      body:LayoutBuilder(
+        builder:(context,Constraints){
+          if(Constraints.Max Width>1200){
+            return Desktop Layout();
+          }else if(constraints.Max Width>800&&constraints.MaxWidth<=1200){
+            return TableLayout();
+            
+
+          
+        
+
   
+      
